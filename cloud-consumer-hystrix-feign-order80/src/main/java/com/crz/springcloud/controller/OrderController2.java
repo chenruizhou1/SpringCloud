@@ -8,22 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-public class PaymentController {
+public class OrderController2 {
 
     @Resource
     private PaymentService paymentService;
 
-    @GetMapping("/payment/hystrix/okTest")
-    public String okTest() {
-        return paymentService.okTest();
-    }
-
-    @GetMapping("/payment/hystrix/timeoutTest")
+    @GetMapping("/consumer/payment/hystrix/timeoutTest3")
     public String timeoutTest() {
         return paymentService.timeoutTest();
     }
 
-    @GetMapping("/payment/hystrix/circuitBreakerTest/{id}")
+    @GetMapping("/consumer/payment/hystrix/circuitBreakerTest/{id}")
     public String circuitBreakerTest(@PathVariable("id") int id) {
         return paymentService.circuitBreakerTest(id);
     }

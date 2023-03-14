@@ -20,6 +20,7 @@
         <module>cloud-provider-hystrix-payment8001</module>
         <module>cloud-consumer-hystrix-feign-order80</module>
         <module>cloud-gateway-gateway1000</module>
+        <module>cloud-config-center-3344</module>
     </modules>
 
     <properties>

@@ -1,7 +1,7 @@
 package com.crz.springcloud.controller;
 
-import com.crz.springcloud.entities.CommonResult;
-import com.crz.springcloud.entities.Payment;
+import com.crz.springcloud.response.CommonResult;
+import com.crz.springcloud.entity.Payment;
 import com.crz.springcloud.lb.IMyLoadBalancerRule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;

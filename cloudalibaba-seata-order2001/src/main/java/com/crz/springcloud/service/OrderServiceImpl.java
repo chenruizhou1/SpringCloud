@@ -1,8 +1,10 @@
 package com.crz.springcloud.service;
 
-import com.crz.springcloud.entities.ObjectResponse;
+import cn.hutool.core.util.RandomUtil;
+import com.crz.springcloud.response.ObjectResponse;
 import com.crz.springcloud.entity.Order;
 import com.crz.springcloud.mapper.OrderMapper;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,13 +20,15 @@ public class OrderServiceImpl implements IOrderService {
     private IAccountService accountService;
 
     @Override
+    @GlobalTransactional
     public ObjectResponse<Order> createOrder(Order order) {
 
-        ObjectResponse storageResponse = storageService.decreaseStorage(order.getCommodityCode(), order.getCount());
+        storageService.decreaseStorage(order.getCommodityCode(), order.getCount());
 
+        order.setOrderNo(RandomUtil.randomNumbers(10));
         orderMapper.createOrder(order);
 
-        ObjectResponse accountResponse = accountService.decreaseAccount(order.getUserId(), order.getMoney());
+        accountService.decreaseAccount(order.getUserId(), order.getMoney());
 
         ObjectResponse<Order> response = new ObjectResponse<>();
         response.setStatus(200);

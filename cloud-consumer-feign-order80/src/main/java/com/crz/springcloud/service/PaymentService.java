@@ -1,7 +1,7 @@
 package com.crz.springcloud.service;
 
-import com.crz.springcloud.entities.CommonResult;
-import com.crz.springcloud.entities.Payment;
+import com.crz.springcloud.response.CommonResult;
+import com.crz.springcloud.entity.Payment;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

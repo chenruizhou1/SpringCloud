@@ -1,7 +1,7 @@
 package com.crz.springcloud.service;
 
-import com.crz.springcloud.entities.ObjectResponse;
 import com.crz.springcloud.entity.Order;
+import com.crz.springcloud.response.ObjectResponse;
 
 public interface IOrderService {
 

@@ -1,4 +1,4 @@
-package com.crz.springcloud.entities;
+package com.crz.springcloud.response;
 
 import java.io.Serializable;
 

@@ -11,8 +11,8 @@
         <result column="money" property="money" />
     </resultMap>
 
-    <insert id="createOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO order_tbl VALUES(null, #{order.orderNo}, #{order.userId}, #{order.commodityCode}, #{order.count}, #{order.money});
+    <insert id="createOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="order.id">
+        INSERT INTO order_tbl(`order_no`, `user_id`, `commodity_code`, `count`, `money`) VALUES(#{order.orderNo}, #{order.userId}, #{order.commodityCode}, #{order.count}, #{order.money});
     </insert>
 
 </mapper>

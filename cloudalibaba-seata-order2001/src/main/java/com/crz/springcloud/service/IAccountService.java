@@ -1,6 +1,6 @@
 package com.crz.springcloud.service;
 
-import com.crz.springcloud.entities.ObjectResponse;
+import com.crz.springcloud.response.ObjectResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
